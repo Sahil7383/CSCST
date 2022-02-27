@@ -1,0 +1,91 @@
+<div class="container box_shadow">
+  <div class="row">
+    <div class="col-sm-6">
+      <img
+        class="d-md-none align-items-center"
+        src="assets/img/4826435.jpg"
+        class="img-thumbnail"
+      />
+    </div>
+    <div class="col-sm-6">
+      <div class="card" style="margin-top: 60px">
+        <div class="card-body">
+          <div class="section-title">
+            <h4>Login</h4>
+          </div>
+
+          <form action="" [formGroup]="loginForm" (ngSubmit)="Login()">
+            <div class="form-row">
+              <div class="form-group required col-md-12">
+                <label for="Email">Email</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="Email"
+                  autocomplete="off"
+                  formControlName="email"
+                />
+                <label
+                  class="text-danger"
+                  *ngIf="
+                loginForm.get('email')?.touched &&
+                loginForm.get('email')?.errors?.['required']
+              "
+                >
+                  Email Must Required
+                </label>
+                <label
+                  class="text-danger"
+                  *ngIf="
+              loginForm.get('email')?.touched &&
+              loginForm.get('email')?.errors?.['email']
+            "
+                >
+                  Email Not Valid
+                </label>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group required col-md-12">
+                <label for="Password">Password</label>
+                <input
+                  type="password"
+                  id="Password"
+                  class="form-control"
+                  autocomplete="off"
+                  formControlName="password"
+                />
+                <label
+                  class="text-danger"
+                  *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.errors?.['required']"
+                >
+                  Password Must Required
+                </label>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-8">
+                Don't Have An Account?
+                <a routerLink="/register">Click Here</a>
+              </div>
+            </div>
+            <div class="form-group form-check"></div>
+            <button
+              type="submit"
+              class="btn"
+              style="background-color: #007dfe; color: white"
+              name="login"
+            >
+              <i
+                class="fa fa-sign-in"
+                aria-hidden="true"
+                style="margin-right: 10px"
+              ></i
+              >Login
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

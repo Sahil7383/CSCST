@@ -1,0 +1,10 @@
+.box_shadow {
+  border: 1px solid #e7e7e7;
+  background-color: white;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 2px 5px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+}
+
+.box_shadow img {
+  border: none;
+}
